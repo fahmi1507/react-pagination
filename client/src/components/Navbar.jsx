@@ -2,28 +2,28 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container">
+        <a className="navbar-brand" href="#">
           qlue
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <Link to="/" class="nav-link active" aria-current="page" href="#">
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link to="/" className="nav-link active" aria-current="page" href="#">
                 Home
               </Link>
             </li>
-            <li class="nav-item">
-              <Link to="/graphic" class="nav-link" href="#">
+            <li className="nav-item">
+              <Link to="/graphic" className="nav-link" href="#">
                 Graphic
               </Link>
             </li>
-            <li class="nav-item">
-              <Link to="/map" class="nav-link" href="#">
+            <li className="nav-item">
+              <Link to="/map" className="nav-link" href="#">
                 Map
               </Link>
             </li>
