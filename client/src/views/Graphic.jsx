@@ -19,7 +19,7 @@ const Graphic = () => {
 
   useEffect(() => {
     dispatch(fetchCountries());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     setChartData({
@@ -28,12 +28,21 @@ const Graphic = () => {
       datasets: [
         {
           label: "covid",
-          data: [covid19Data.All.confirmed, covid19Data.All.recovered, covid19Data.All.deaths],
+          data: [
+            covid19Data.All.confirmed,
+            covid19Data.All.recovered,
+            covid19Data.All.deaths,
+          ],
           backgroundColor: ["#ffb347 ", "#ACD1AF", "#ff6961"],
         },
       ],
     });
-  }, [covid19Data]);
+  }, [
+    covid19Data.All.confirmed,
+    covid19Data.All.recovered,
+    covid19Data.All.deaths,
+    chartData,
+  ]);
 
   if (loading) {
     return <h2>loading...</h2>;
@@ -43,7 +52,6 @@ const Graphic = () => {
     setSelectedCountry(e.target.value);
   };
 
-  console.log(selectedCountry, "<<<<<<<");
   return (
     <div className="container">
       <select name="" id="" onChange={(e) => option(e)}>
