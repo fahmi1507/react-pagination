@@ -9,7 +9,7 @@ const Table = () => {
   const loading = useSelector((state) => state.loading);
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
-  const [tasksPerPage, setTasksPerPage] = useState(10);
+  const [tasksPerPage] = useState(10);
 
   useEffect(() => {
     dispatch(fetchTask());

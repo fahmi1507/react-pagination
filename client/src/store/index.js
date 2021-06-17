@@ -3,6 +3,8 @@ import thunk from "redux-thunk";
 const intialState = {
   tasks: [],
   loading: false,
+  covid19Data: { All: { deaths: 0, confirmed: 0, recovered: 0 } },
+  countries: [],
 };
 
 function reducer(state = intialState, action) {
@@ -12,6 +14,11 @@ function reducer(state = intialState, action) {
       return { ...state, tasks: payload };
     case "SET_LOADING":
       return { ...state, loading: payload };
+    case "SET_COVID":
+      return { ...state, covid19Data: payload };
+
+    case "SET_COUNTRIES":
+      return { ...state, countries: payload };
 
     default:
       return state;
