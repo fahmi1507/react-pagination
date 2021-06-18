@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Doughnut } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCountries, fetchCovid } from "../store/action";
+import ClipLoader from "react-spinners/ClipLoader";
+import "./table.css";
 const Graphic = () => {
   const dispatch = useDispatch();
   const covid19Data = useSelector((state) => state.covid19Data);
@@ -12,6 +14,7 @@ const Graphic = () => {
   const [chartData, setChartData] = useState({
     labels: ["Confirmed", "Recovered", "Deaths"],
   });
+  const [color] = useState("#333");
 
   useEffect(() => {
     dispatch(fetchCovid(selectedCountry));
@@ -27,7 +30,7 @@ const Graphic = () => {
 
       datasets: [
         {
-          label: "covid",
+          label: "Covid",
           data: [
             covid19Data.All.confirmed,
             covid19Data.All.recovered,
@@ -37,17 +40,15 @@ const Graphic = () => {
         },
       ],
     });
-  }, [
-    covid19Data.All.confirmed,
-    covid19Data.All.recovered,
-    covid19Data.All.deaths,
-    chartData,
-  ]);
+  }, [covid19Data]);
 
   if (loading) {
-    return <h2>loading...</h2>;
+    return (
+      <div className="sweet-loading">
+        <ClipLoader color={color} loading={loading} size={50} />
+      </div>
+    );
   }
-
   const option = (e) => {
     setSelectedCountry(e.target.value);
   };
@@ -63,7 +64,7 @@ const Graphic = () => {
         ))}
       </select>
       <h3>Covid-19 Cases in {covid19Data.All.country}</h3>
-      <Doughnut
+      <Pie
         data={chartData}
         options={{
           responsive: true,

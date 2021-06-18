@@ -5,7 +5,9 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <p className="navbar-brand">qlue</p>
+        <a className="navbar-brand" href="/">
+          qlue
+        </a>
         <button
           className="navbar-toggler"
           type="button"

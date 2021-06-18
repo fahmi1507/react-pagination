@@ -7,7 +7,13 @@ const Task = ({ tasks }) => {
         <tr key={i}>
           <th scope="row">{e.id}</th>
           <td>{e.title}</td>
-          <td className="text-center">{e.completed ? <button className="btn btn-success">complete</button> : <button className="btn btn-danger">pending</button>}</td>
+          <td className="text-center">
+            {e.completed ? (
+              <button className="btn btn-success">complete</button>
+            ) : (
+              <button className="btn btn-danger">pending</button>
+            )}
+          </td>
         </tr>
       ))}
     </>

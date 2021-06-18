@@ -1,12 +1,16 @@
 .login-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  justify-content: center;
+  min-height: 95vh;
+}
+p{
+  margin-bottom: 0.3rem;
 }
 
 form {
   background-color: #f3f3f3;
   border-radius: 5px;
+}
+
+.row {
+  min-height: 95vh;
+  max-width: 99%;
 }

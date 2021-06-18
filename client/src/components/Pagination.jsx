@@ -12,7 +12,11 @@ const Pagination = ({ tasksPerPage, totalTasks, paginate }) => {
       <ul className="pagination">
         {pageNumbers.map((n) => (
           <li key={n} className="page-item">
-            <p style={{ cursor: "pointer" }} onClick={() => paginate(n)} className="page-link">
+            <p
+              style={{ cursor: "pointer" }}
+              onClick={() => paginate(n)}
+              className="page-link"
+            >
               {n}
             </p>
           </li>

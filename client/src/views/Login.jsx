@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
-
+import codng from "../images/Coding _Monochromatic.png";
 async function loginUser(credentials) {
   return fetch("https://ayodhya-dev.qlue.id/api/auths/login", {
     method: "POST",
@@ -27,22 +27,44 @@ const Login = ({ setToken }) => {
 
   return (
     <div className="login-wrapper">
-      <h1>SIGN IN</h1>
-      <form onSubmit={handleSubmit} className="d-flex flex-column p-3">
-        <label>
-          <p>Email</p>
-          <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <label className="mb-3">
-          <p>Password</p>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-        <div>
-          <button className="btn btn-primary" type="submit">
-            Submit
-          </button>
+      <div className="row justify-content-center align-items-center ">
+        <div className="col-md-6 text-center">
+          <img src={codng} alt="" />
         </div>
-      </form>
+        <div className="col-md-6 d-flex flex-column align-items-center">
+          <h1>SIGN IN</h1>
+          <form onSubmit={handleSubmit} className="pb-4 pt-3 px-3 ">
+            <div className="my-2">
+              <label>
+                <p>Email</p>
+              </label>
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="form-control"
+              />
+            </div>
+
+            <div className="my-2">
+              <label>
+                <p>Password</p>
+              </label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="form-control"
+              />
+            </div>
+            <div>
+              <button className="btn btn-primary" type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

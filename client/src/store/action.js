@@ -34,12 +34,7 @@ export function fetchCovid(input) {
     input = "Indonesia";
   }
 
-  console.log(input, "SELELELELE");
-  //Add a second foo parameter.
   params.append("country", input);
-  //Query string is now: 'foo=1&bar=2&foo=4'
-
-  // console.log("https://covid-api.mmediagroup.fr/v1/cases?" + params.toString());
   console.log(url.href + params.toString());
   return function (dispatch) {
     dispatch(setLoading(true));
